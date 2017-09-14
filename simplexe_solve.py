@@ -1,4 +1,5 @@
 #!/bin/python3.6
+#Test Comment
 
 import re
 
@@ -47,12 +48,12 @@ def comptZ():
 		coef=Z[Vars.index(Base[i])]
 		for j in range(0,len(Z)) :
 			simplex_table[len(simplex_table)-1][j]+=coef*simplex_table[i][j]
-	
+
 def Stop():
 	cont = False
 	cur=0
 	for i in simplex_table[len(simplex_table)-1]:
-		if i < 0 and cur != len(simplex_table[len(simplex_table)-1])-1 : 
+		if i < 0 and cur != len(simplex_table[len(simplex_table)-1])-1 :
 			cont = True
 			break
 	return cont
@@ -96,7 +97,7 @@ def MajTab():
 		r_cur+=1
 	for i in range(len(simplex_table[varOut[0]])):
 		simplex_table[varOut[0]][i]/=pivot
-	
+
 
 def simplexe():
 
@@ -105,7 +106,7 @@ def simplexe():
 		findOUT()
 		Base[varOut[0]] = Vars[varIn[0]]
 		MajTab()
-	
+
 
 ##### MAIN
 comptZ()
@@ -117,9 +118,4 @@ comptZ()
 simplexe()
 
 for i in range(len(Base)):
-	print(Base[i],' : ',simplex_table[i][len(simplex_table[i])-1]) 
-
-
-
-
-
+	print(Base[i],' : ',simplex_table[i][len(simplex_table[i])-1])
